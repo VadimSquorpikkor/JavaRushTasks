@@ -1,5 +1,6 @@
 package com.javarush.task.task08.task0809;
 
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
@@ -16,12 +17,10 @@ public class Solution {
     }
 
     public static long getTimeMsOfInsert(List list) {
-        //напишите тут ваш код
-
+        long start = System.currentTimeMillis();
         insert10000(list);
-
-        //напишите тут ваш код
-
+        long end = System.currentTimeMillis();
+        return start - end;
     }
 
     public static void insert10000(List list) {
