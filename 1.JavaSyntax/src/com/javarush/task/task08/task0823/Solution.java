@@ -12,13 +12,16 @@ public class Solution {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
-        String res = s.substring(0, 1).toUpperCase();
-        for (int i = 1; i < s.length() - 1; i++) {
-            if (s.charAt(i) == ' '&&s.charAt(i+1)!=' ') { //второе условие на случай с несколькими пробелами
-                res += " ".concat(s.substring(i + 1, i + 2).toUpperCase());
-                i++;
+        String res = "";
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != ' ' && (i == 0 || s.charAt(i - 1) == ' ')) {
+                res += s.substring(i, i + 1).toUpperCase();
+            } else if (s.charAt(i) != ' ') {
+                res += s.charAt(i);
+            } else {
+                res += " ";
             }
-            else res += s.charAt(i);
         }
 
         System.out.println(res);
