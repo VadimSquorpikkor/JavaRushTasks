@@ -11,6 +11,9 @@ public class Solution {
 
     public static int getStackTraceDeep() {
         //напишите тут ваш код
+        StackTraceElement[] traceElements = Thread.currentThread().getStackTrace();
+        System.out.println(traceElements.length);
+        return traceElements.length;
     }
 }
 
